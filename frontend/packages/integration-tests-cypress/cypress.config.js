@@ -10,7 +10,7 @@ module.exports = defineConfig({
   viewportHeight: 1080,
   screenshotsFolder: '../../gui_test_screenshots/cypress/screenshots',
   videosFolder: '../../gui_test_screenshots/cypress/videos',
-  video: true,
+  video: false,
   reporter: '../../node_modules/cypress-multi-reporters',
   reporterOptions: {
     configFile: 'reporter-config.json',
