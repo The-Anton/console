@@ -3,12 +3,12 @@ const path = require('path');
 
 const threadId = process.env.CYPRESS_THREAD || 'default';
 
-const packageName = 'integration-tests-cypress';
+const packageName = 'dev-console';
 
 // Set up a log file for this thread
 const logFilePath = path.join(
   __dirname,
-  `../../../../gui_test_screenshots/${packageName}-thread-${threadId}.txt`,
+  `../../../../../gui_test_screenshots/${packageName}-thread-${threadId}.txt`,
 );
 
 const logDir = path.dirname(logFilePath);

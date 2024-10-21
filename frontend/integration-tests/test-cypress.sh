@@ -26,8 +26,8 @@ function copyArtifacts {
   if [ -d "$ARTIFACT_DIR" ] && [ -d "$SCREENSHOTS_DIR" ]; then
     echo "Copying artifacts from $(pwd)..."
     cp -r "$SCREENSHOTS_DIR" "${ARTIFACT_DIR}/gui_test_screenshots"
-    cp -r "./packages/integration-tests-cypress/parallel-weights.json" "${ARTIFACT_DIR}/gui_test_screenshots"
-    cp -r "./packages/integration-tests-cypress/runner-results" "${ARTIFACT_DIR}/gui_test_screenshots"
+    cp -r "./packages/integration-tests-cypress/parallel-weights.json" "${ARTIFACT_DIR}/gui_test_screenshots/parallel-weights/integration-tests-cypress"
+    cp -r "./packages/dev-console/integration-tests/parallel-weights.json" "${ARTIFACT_DIR}/gui_test_screenshots/parallel-weights/dev-console"
 
   fi
 }
@@ -94,7 +94,7 @@ fi
 
 if [ -n "${headless-}" ] && [ -z "${pkg-}" ]; then
   yarn run test-cypress-console-headless-parallel
-  yarn run test-cypress-dev-console-headless
+  yarn run test-cypress-dev-console-headless-parallel
   yarn run test-cypress-olm-headless
   yarn run test-cypress-helm-headless
   yarn run test-cypress-knative-headless
